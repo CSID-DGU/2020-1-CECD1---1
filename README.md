@@ -9,4 +9,4 @@
 
 # inference
 
-- !python {...}/Audio-Resolution-with-remove-noise/src/run.py eval --logname {...}/Audio-Resolution-with-remove-noise/src/saveFile/model.ckpt-0000 --out-label singlespeaker-out --wav-file-list {...}/Audio-Resolution-with-remove-noise/data/vctk/speaker1/speaker1-val-files.txt --r 4
+- python {...}/Audio-Resolution-with-remove-noise/src/run.py eval --logname {...}/Audio-Resolution-with-remove-noise/src/saveFile/model.ckpt-0000 --out-label singlespeaker-out --wav-file-list {...}/Audio-Resolution-with-remove-noise/data/vctk/speaker1/speaker1-val-files.txt --r 4
