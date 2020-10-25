@@ -152,7 +152,7 @@ class AudioSuperResolutionRecorderApp(QWidget):
         super().__init__()
         self.record_file_list = []
         self.recorder = Recorder()
-        self.recorder.merge()
+        # self.recorder.merge()
         self.set_up_ui()
 
     def set_up_ui(self):
