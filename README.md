@@ -2,6 +2,11 @@
 
 우리가간다 / 문주원 김법종 선진 정지원
 
-Input Example
+# 설명
 
-python run.py train --train ../data/vctk/speaker1/vctk-speaker1-train.4.16000.8192.4096.h5 --val ../data/vctk/speaker1/vctk-speaker1-val.4.16000.8192.4096.h5 -e 120 --batch-size 64 --lr 3e-4 --logname singlespeaker
+- client 폴더에 윈도우 프로그램(PyQT)
+- server 폴더에 딥러닝 프로그램
+
+# inference
+
+- python {...}/Audio-Resolution-with-remove-noise/src/run.py eval --logname {...}/Audio-Resolution-with-remove-noise/src/saveFile/model.ckpt-0000 --out-label singlespeaker-out --wav-file-list {...}/Audio-Resolution-with-remove-noise/data/vctk/speaker1/speaker1-val-files.txt --r 4
