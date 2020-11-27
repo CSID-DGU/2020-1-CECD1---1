@@ -11,15 +11,16 @@ class AudioRecorder:
         self.record_second = 10
         self.file_name = 'audiorecord.wav'
         self.p = pyaudio.PyAudio() # Create an interface to PortAuido
-
+        self.inputDevice = 1
     def audio_record(self):
 
         stream = self.p.open(format=self.sample_format,
                         channels=self.channels,
                         rate=self.fs,
                         frames_per_buffer=self.CHUNK,
+                        input_device_index=self.inputDevice,
                         input=True)
-
+        
         frames = []  # initialize array to store frames
 
 
@@ -47,7 +48,10 @@ class AudioRecorder:
         wf.writeframes(b''.join(frames))
         wf.close()
 
-    def getaudiodevices(self):
-        for i in range(self.p.get_device_count()):
-            dev = self.p.get_device_info_by_index(i)
-            print((i, dev['name'], dev['maxInputChannels']))
+    # def getaudiodevices(self):
+    #     # for i in range(self.p.get_device_count()):
+    #     #     dev = self.p.get_device_info_by_index(i)
+    #     #     print((i, dev['name'], dev['maxInputChannels']))
+    #     a.desc = a.cb.currentIndex() + 1
+    #     a.INDEX_OF_CHOSEN_INPUT_DEVICE = a.desc
+    #     print(a.desc)

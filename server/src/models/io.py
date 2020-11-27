@@ -2,9 +2,12 @@ import os
 import numpy as np
 import h5py
 import librosa
-
 # from tqdm import tqdm
 from scipy.signal import decimate
+# import sys
+# sys.path.append("....")
+# import AudioResolutionApp
+# print(f'global convert_rate_val: {AudioResolutionApp.AudioResolutionApp.convert_rate_val}')
 
 from matplotlib import pyplot as plt
 
@@ -54,6 +57,8 @@ def upsample_wav(wav, args, model):
     tempI = -1
     len_x_lr = len(x_lr)
     while i < len_x_lr:
+        # AudioResolutionApp.AudioResolutionApp.convert_rate_val = int(i / len_x_lr * 100)
+        # print(f'io: {AudioResolutionApp.AudioResolutionApp.convert_rate_val}')
         if i + 2048 > len_x_lr:
             tempI = len_x_lr * 4 - len(x_pr)
             x_lr_crop = x_lr[len_x_lr - 2048:]

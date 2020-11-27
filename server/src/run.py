@@ -113,10 +113,8 @@ def eval(args):
     # load model
     model = get_model(args, 0, args.r, from_ckpt=True, train=False)
     model.load(args.logname)  # from default checkpoint
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-    file_dir = os.path.join(BASE_DIR, "6temp.wav")
-    upsample_wav("6temp.wav", args, model)
+    upsample_wav(args.wav_file_list, args, model)
 
 
 def get_model(args, n_dim, r, from_ckpt=False, train=True):
