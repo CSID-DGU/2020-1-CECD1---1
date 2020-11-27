@@ -1,6 +1,5 @@
 venv
 model.ckpt.*
 *.avi
-*.png
 *.wav
 .idea
